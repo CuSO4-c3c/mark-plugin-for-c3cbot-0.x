@@ -1,0 +1,34 @@
+{
+	"plugin_name": "mark",
+	"plugin_scope": "mark",
+	"plugin_exec": "mark.js",
+	"command_map": {
+		"mark": {
+			"hargs": {
+				"vi_VN": "<mode> <text>",
+				"en_US": ""
+			},
+			"hdesc": {
+				"vi_VN": "",
+				"en_US": ""
+			},
+			"fscope": "mark",
+			"compatibly": 0
+		}
+	},
+	"author": "Kali",
+	"version": "1.5.1",
+	"node_depends": {
+		"fs": "*",
+		"path": "*",
+        "text2png": "*",
+		"canvas": "*",
+		"merge-images": "*",
+		"wait-on": "*"
+	},
+	"file_map": {
+        "fonts/arial.ttf": "arial",
+		"images/mark.png": "mark"
+    },
+	"complied_for": "0.3.0"
+}
