@@ -5,8 +5,8 @@
 	"command_map": {
 		"mark": {
 			"hargs": {
-				"vi_VN": "<mode> <text>",
-				"en_US": ""
+				"vi_VN": "[cỡ chữ] <tin nhắn>",
+				"en_US": "[font size] <text>"
 			},
 			"hdesc": {
 				"vi_VN": "",
