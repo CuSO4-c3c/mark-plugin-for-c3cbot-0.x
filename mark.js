@@ -40,6 +40,16 @@ for (var n in nameMapping) {
 
 
 var mark = async function (type, data) {
+    if(!fs.existsSync(path.join(rootpath, 'images', 'mark.png'))) {
+        var dt = await fetch('https://raw.githubusercontent.com/CuSO4-c3c/mark-plugin-for-c3cbot-0.x/main/images/mark.png')
+        var dtb = await dt.buffer()
+        fs.writeFileSync(path.join(rootpath, 'images', 'mark.png'), dtb)
+    }
+    if(!fs.existsSync(path.join(rootpath, 'fonts', 'arial.ttf'))) {
+        var ft = await fetch('https://raw.githubusercontent.com/CuSO4-c3c/mark-plugin-for-c3cbot-0.x/main/fonts/arial.ttf')
+        var ftb = await ft.buffer()
+        fs.writeFileSync(path.join(rootpath, 'fonts', 'arial.ttf'), ftb)
+    }
     var args = data.args
     var fontsize = args[1]
     if (!isNaN(fontsize) === true) {
@@ -71,7 +81,7 @@ var mark = async function (type, data) {
             var y = 530
         }
         console.log(text)
-        var te = fontsize + 'px Arial'
+        var tf = fontsize + 'px Arial'
         var fontpath = path.join(rootpath, "fonts", "arial.ttf")
         var temp = "temp_" + Date.now() + ".png";
         var temp1 = "temp1_" + Date.now() + ".png";
@@ -79,7 +89,7 @@ var mark = async function (type, data) {
         var text = decodeURIComponent(text)
         fs.writeFileSync(path.join(rootpath, "temp", temp), text2png(text, {
             color: "#000000",
-            font: te,
+            font: tf,
             localFontPath: fontpath,
             localFontName: "Arial",
             lineSpacing : 10
